@@ -1,0 +1,5 @@
+#!/bin/bash
+rm -f ./iws ./couchbase/libiwscb.so
+
+$(cd ./couchbase/ && ./build )
+${CC:-gcc} -g -Wall -I. -I./couchbase stud.c ringbuffer.c configuration.c ./modules/*.c -Lcouchbase -lev -liwscb -lcouchbase -o iws 

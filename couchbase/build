@@ -1,0 +1,2 @@
+#!/bin/sh
+${CC:-gcc} -g -Wall -Werror -I. -shared -o libiwscb.so -fPIC lcb-plugin/*.c *.c -lev -export-dynamic
